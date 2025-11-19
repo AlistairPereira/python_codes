@@ -1,8 +1,10 @@
 s="mumbai"
 print(s[0])
+print(s[0])
 print(s[-1])
 print(s[1:4])
 print(s[::-1])
+print(s[1:4])
 x=[1,2,3,"java",True,10]
 for i in x:
     print(i)
@@ -126,3 +128,173 @@ print(person.setdefault("wages","89000"))
 print(person)
 person['salary']=50000
 print(person)
+print("--------------------------")
+print(person["name"])
+person['name']="amroy"
+person['hobbies']=["reading","listening music"]
+print(person)
+print(person.get('name'))
+print(person.get("country"))
+print(person.get("region","alaska"))
+print(person.setdefault("name"))
+print(person.setdefault("networth",90000000))
+print(person.setdefault("name","alistair"))
+print(person)
+
+#Reverse a number
+a=10
+b=20
+a=a+b
+b=a-b
+a=a-b
+print(a,b)
+
+#swap numbers
+num1 = int(input("enter a num1: "))
+num2 = int(input("enter a num2: "))
+print(f"num1 = {num1} , num2 = {num2}")
+
+if num1>10:
+    if num2 > 20:
+        num1 = num1+num2
+        num2 = num1-num2
+        num1 = num1-num2
+        print("after swapping")
+        print(f"num1: {num1} , num2: {num2}")
+    else:
+        print("num2 should be greater than 20")
+else:
+    if num1 <= 10 and num2 <= 20:
+        print("both conditions not met")
+    else:
+        print("num1 should be greater than 10")
+        
+        
+#Check if number is positive, negative, or zero
+
+number = int(input("enter a number: "))
+if number > 0:
+    print("positive")
+elif number < 0:
+    print("negative")
+else:
+    print("zero")
+
+# # Check if a number is divisible by 5 and 11
+
+number = int(input("enter a number and check if its divisble by 5 and 11: "))
+if number%5 ==0 and number%11==0:
+    print("divisible by 5 and 11")
+else:
+    print("not divisible")
+    
+    
+""" Give discount based on purchase amount
+
+If amount > 5000
+→ If customer is “premium”, discount = 20%
+→ Else discount = 10%
+
+Else
+→ No discount"""
+
+
+purchase_amount=int(input("enter purchase amount: "))
+customer= input("enter customer type 'premium/normal': ")
+
+if purchase_amount >= 5000:
+    if customer == "premium":
+        discount=0.20
+    else:
+        discount=0.10
+else:
+    if purchase_amount < 5000 and customer == "premium":
+        discount = 0.05
+    elif purchase_amount < 5000 and customer != "premium":
+        discount =0
+
+final_price = purchase_amount - (purchase_amount * discount)
+print(f"Discount: {discount * 100}%")
+print(f"final_price: {final_price}")
+
+
+""" Electricity Bill Calculator
+
+Input: units
+
+If units ≤ 100 → ₹5 per unit
+
+If 101–200 → ₹7 per unit
+If  200 → then First 200 units → 7
+Remaining → 10
+
+Use nested-if for the >200 case."""
+# units = int(input("enter units: "))
+
+# if units <= 100:
+#     price = units * 5
+# elif units > 100 and units <= 200:
+#     price = units * 7
+# else:
+#     if units > 200:
+#         if units > 200 and units <=400:
+#             price = units * 7
+#         else:
+#             price = units *10
+# print(f"units : {units} , price : {price} ")
+
+
+units = int(input("enter units: "))
+
+if units <= 100:
+    price = units * 5
+elif units > 100 and units <= 200:
+    price = units * 7
+else:
+    # first_100 = 100 * 5
+    first_200 = 200 * 7
+    remaining = (units - 200) * 10
+    price = first_200 + remaining
+    
+    
+print(f"units : {units} , price : {price} ")
+
+"""Nested if: Shop Discount System
+
+Inputs: amount, membership (yes/no)
+Logic:
+
+If amount > 8000:
+
+If membership == yes → 30%
+
+Else → 20%
+
+Else if amount > 5000:
+
+membership yes → 15%
+
+membership no → 10%
+
+Else → 0%"""
+
+amount = int(input("enter a amt: "))
+membership = input("Are you a member : yes/no ")
+
+if amount > 8000:
+    if membership == "yes":
+        discount = 0.30
+    else:
+        discount = 0.20
+elif amount > 5000:
+    if membership == "yes":
+        discount = 0.15
+    else:
+        discount = 0.10
+else:
+    discount = 0
+final_price = amount - (amount * discount)
+print(f"Discount: {discount * 100}%")
+print(f"final_price: {final_price}")
+
+    
