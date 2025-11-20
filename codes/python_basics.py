@@ -150,9 +150,9 @@ a=a-b
 print(a,b)
 
 #swap numbers
-num1 = int(input("enter a num1: "))
-num2 = int(input("enter a num2: "))
-print(f"num1 = {num1} , num2 = {num2}")
+# num1 = int(input("enter a num1: "))
+# num2 = int(input("enter a num2: "))
+# print(f"num1 = {num1} , num2 = {num2}")
 
 if num1>10:
     if num2 > 20:
@@ -297,4 +297,53 @@ final_price = amount - (amount * discount)
 print(f"Discount: {discount * 100}%")
 print(f"final_price: {final_price}")
 
+"""
+Train Ticket Price Calculator 
+Inputs: age, class (1/2/3), 
+distance Rules: Base price = distance × 2 
+If class == 1 → add +50% If age < 10 → 50% discount
+If age ≥ 60 → 30% discount Use nested-if for class and age logic.
+"""
     
+age = int(input("enter your age: "))
+
+while True:
+    train_class = int(input("enter class 1/2/3: "))
+    if train_class >= 1 and train_class <= 3:
+        break # will terminate everything inisde while loop and execute that is outside while loop i.e. distance
+    else:
+        print("enter a valid class between 1 and 3")
+        
+distance = int(input("enter distance in km: "))
+base_price = distance * 2
+
+
+if train_class == 1:
+    base_price = base_price + (base_price / 2)
+        
+if age < 10:
+    # base_price = base_price - distance
+    base_price = base_price - (base_price / 2)
+elif age >= 60:
+    base_price = base_price * 0.7
+        
+print(f"ticket_price : {base_price}")
+
+
+#break, pass, continue (Linear Search)
+
+l= [10,20,30,40,50,60]
+key =50
+
+for index,value in enumerate(l):
+    if value == key:
+        print("Element found at index",index)
+        break
+    else:
+        #print("checking how times it failed")
+        # continue
+        pass
+        print("testing")
+        
+else:
+    print("Element not found")
