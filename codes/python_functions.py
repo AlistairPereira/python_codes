@@ -427,89 +427,163 @@ print(res)
 # calculator()    
 
 print("-------------------------------------")
-def calculator():
-    def add(nums):
-        result =0
-        for n in nums:
-            result = result+n
-        return result
+# def calculator():
+#     def add(nums):
+#         result =0
+#         for n in nums:
+#             result = result+n
+#         return result
     
-    def sub(nums): 
-        result = nums[0]
-        for n in nums[1:]:
-            result = result - n
-        return result
+#     def sub(nums): 
+#         result = nums[0]
+#         for n in nums[1:]:
+#             result = result - n
+#         return result
     
-    def mul(nums): 
-        result = nums[0]
-        for n in nums[1:]:
-            result = result * n
-        return result
+#     def mul(nums): 
+#         result = nums[0]
+#         for n in nums[1:]:
+#             result = result * n
+#         return result
     
-    def div(nums):
-        result = nums[0]
-        for n in nums[1:]:
-            if n ==0:
-                return ZeroDivisionError
-            result = result/n
-        return result
+#     def div(nums):
+#         result = nums[0]
+#         for n in nums[1:]:
+#             if n ==0:
+#                 return ZeroDivisionError
+#             result = result/n
+#         return result
     
-    operations = {"add": add, "sub": sub, "mul": mul, "div": div}
+#     operations = {"add": add, "sub": sub, "mul": mul, "div": div}
     
-    while True:
-        op = input("enter operations add/sub/mul/div: ")
-        # a = float(input("enter num1: "))
-        # b = float(input("enter num2: "))
-        # raw = input("enter numbers separated by space: ")
-        # nums = [float(x) for x in raw.split()]
+#     while True:
+#         op = input("enter operations add/sub/mul/div: ")
+#         # a = float(input("enter num1: "))
+#         # b = float(input("enter num2: "))
+#         # raw = input("enter numbers separated by space: ")
+#         # nums = [float(x) for x in raw.split()]
         
-        if op == "exit":
-            print("bye bye, u have exited ")
-            break
+#         if op == "exit":
+#             print("bye bye, u have exited ")
+#             break
     
-        if op not in operations:
-            print("invalid operation name")
-            continue
+#         if op not in operations:
+#             print("invalid operation name")
+#             continue
         
-        raw = input("enter numbers separated by space: ")
-        nums = [float(x) for x in raw.split()]
+#         raw = input("enter numbers separated by space: ")
+#         nums = [float(x) for x in raw.split()]
         
-        if len(nums) < 2:
-            print("Please enter at least two numbers.")
-            continue
+#         if len(nums) < 2:
+#             print("Please enter at least two numbers.")
+#             continue
         
     
-        result = operations[op](nums)
-        print(f"result: {result}")
+#         result = operations[op](nums)
+#         print(f"result: {result}")
     
-calculator()    
+# calculator()    
 
 
-#GUESS THE NUMBER GAME (Simple & Clean)
+# #GUESS THE NUMBER GAME (Simple & Clean)
 
-import random
-def guess_number():
+# import random
+# def guess_number():
     
-    guess_no = random.randint(1,50)
-    print("think a no between 1 - 50")
-    print("ypu have 3 attempts")
+#     guess_no = random.randint(1,50)
+#     print("think a no between 1 - 50")
+#     print("ypu have 3 attempts")
     
-    for i in range(1,4):
-        user = int(input("enter a number to guess: "))
-        if user == guess_no:
-            print("congratualtons! you guessed the right number!")
-            print(f"you have guessed in {i} attempts")
-            break
+#     for i in range(1,4):
+#         user = int(input("enter a number to guess: "))
+#         if user == guess_no:
+#             print("congratualtons! you guessed the right number!")
+#             print(f"you have guessed in {i} attempts")
+#             break
         
-        if user < guess_no:
-            print("no is low")
-        if user > guess_no:
-            print("no too high")
+#         if user < guess_no:
+#             print("no is low")
+#         if user > guess_no:
+#             print("no too high")
             
-        attempts_left =  3-i
-        if attempts_left > 0:
-            print(f"only attmepts left : {attempts_left}")
+#         attempts_left =  3-i
+#         if attempts_left > 0:
+#             print(f"only attmepts left : {attempts_left}")
             
-    print(f"out of attmepts the correct no was {guess_no}")
+#     print(f"out of attmepts the correct no was {guess_no}")
     
-guess_number()
+# guess_number()
+
+
+# def guessing_number():
+    
+#     secret_no = random.randint(1,20)
+#     print("think of a number to enter: ")
+#     print("only 3 attempts: ")
+    
+#     for i in range(1,4):
+#         user_number = int(input("enter a number: "))
+#         if user_number == secret_no:
+#             print(f"congrats! you have and guess in {i} attmepts")
+            
+#         if user_number < secret_no:
+#             print("no is low")
+#         if user_number > secret_no:
+#             print("no is high")
+            
+#         attempts = 3 - i
+#         print(f"attempts left : {attempts}")
+            
+#     print(f"the correct no is {secret_no}")
+    
+# guessing_number()
+
+
+# Create a Password Strength Checker
+
+"""Write a function that takes a password string and returns:
+
+"Very Weak","Weak""Medium""Strong""Very Strong"
+Based on these rules:
+
+Condition	Points
+Length ≥ 8	+1
+Contains lowercase	+1
+Contains uppercase	+1
+Contains digit	+1
+Contains special char (!@#$%^&*?)	+1
+
+Score → Strength
+1 → Very Weak
+2 → Weak
+3 → Medium
+4 → Strong
+5 → Very Strong"""
+
+def password_detector(password):
+    points =0
+    specials = "!@#$%^&*"
+    
+    if len(password)>8:
+        points +=1
+    if any(ch.islower()for ch in password):
+        points +=1
+    if any(ch.isupper() for ch in password):
+        points +=1
+    if any(ch.isdigit() for ch in password):
+        points+=1
+    if any(ch in specials for ch in password):
+        points+=1
+        
+    if points == 1:
+        return "very weak"
+    elif points ==2:
+        return "weak"
+    elif points == 3:
+        return "Medium"
+    elif points == 4:
+        return "Strong"
+    else:
+        return "Very Strong"
+    
+print(password_detector("12@#$Dei@%^*"))
