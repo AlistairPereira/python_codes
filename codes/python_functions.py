@@ -378,3 +378,138 @@ def unique(l):
 res = unique([1,9,8,8,7,6,1,6])
 print(res)
 
+#  Calculator Using Dictionary of Functions (Clean & Professional)
+
+# def calculator(operation):
+#     def add(a,b):
+#         return a+b
+#     def sub(a,b):
+#         return a-b
+    
+#     # user = input("enter operation add,sub: ")
+#     if operation == "add":
+#         return add
+#     elif operation == "sub":
+#         return sub
+#     else:
+#         raise ValueError("wring operation entred , eter add/sub: ")
+    
+# res = calculator("sub")
+# print(res(10,20))
+
+# def calculator():
+#     def add(a,b):
+#         return a+b
+    
+#     def sub(a,b): 
+#         return a-b
+    
+#     def mul(a,b): 
+#         return a*b
+    
+#     def div(a,b):
+#         if b ==0:
+#             return ZeroDivisionError
+#         return a/b
+    
+#     operations = {"add": add, "sub": sub, "mul": mul, "div": div}
+    
+#     op = input("enter operations add/sub/mul/div: ")
+#     a = float(input("enter num1: "))
+#     b = float(input("enter num2: "))
+    
+#     if op not in operations:
+#         return "invalid operation name"
+    
+#     result = operations[op](a,b)
+#     print(f"result: {result}")
+    
+# calculator()    
+
+print("-------------------------------------")
+def calculator():
+    def add(nums):
+        result =0
+        for n in nums:
+            result = result+n
+        return result
+    
+    def sub(nums): 
+        result = nums[0]
+        for n in nums[1:]:
+            result = result - n
+        return result
+    
+    def mul(nums): 
+        result = nums[0]
+        for n in nums[1:]:
+            result = result * n
+        return result
+    
+    def div(nums):
+        result = nums[0]
+        for n in nums[1:]:
+            if n ==0:
+                return ZeroDivisionError
+            result = result/n
+        return result
+    
+    operations = {"add": add, "sub": sub, "mul": mul, "div": div}
+    
+    while True:
+        op = input("enter operations add/sub/mul/div: ")
+        # a = float(input("enter num1: "))
+        # b = float(input("enter num2: "))
+        # raw = input("enter numbers separated by space: ")
+        # nums = [float(x) for x in raw.split()]
+        
+        if op == "exit":
+            print("bye bye, u have exited ")
+            break
+    
+        if op not in operations:
+            print("invalid operation name")
+            continue
+        
+        raw = input("enter numbers separated by space: ")
+        nums = [float(x) for x in raw.split()]
+        
+        if len(nums) < 2:
+            print("Please enter at least two numbers.")
+            continue
+        
+    
+        result = operations[op](nums)
+        print(f"result: {result}")
+    
+calculator()    
+
+
+#GUESS THE NUMBER GAME (Simple & Clean)
+
+import random
+def guess_number():
+    
+    guess_no = random.randint(1,50)
+    print("think a no between 1 - 50")
+    print("ypu have 3 attempts")
+    
+    for i in range(1,4):
+        user = int(input("enter a number to guess: "))
+        if user == guess_no:
+            print("congratualtons! you guessed the right number!")
+            print(f"you have guessed in {i} attempts")
+            break
+        
+        if user < guess_no:
+            print("no is low")
+        if user > guess_no:
+            print("no too high")
+            
+        attempts_left =  3-i
+        if attempts_left > 0:
+            print(f"only attmepts left : {attempts_left}")
+            
+    print(f"out of attmepts the correct no was {guess_no}")
+    
+guess_number()
