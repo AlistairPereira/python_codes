@@ -25,6 +25,7 @@ def normal_func():
     return [1,2,3]
 res = normal_func()
 print(res)
+print("---------------------")
 
 def gen():
     yield 1
@@ -42,6 +43,8 @@ The function runs
 Hits a yield → outputs a value
 Function freezes
 Next time you call next() → it continues from where it stopped"""
+print("---------------------")
+
 
 def demo():
     print("step 1")
@@ -54,6 +57,8 @@ print(next(d))
 print(next(d))
 
 #Save memory
+
+print("---------------------")
 
 def func():
     return [i for i in range(1,100)] #uses huge memory
@@ -69,6 +74,8 @@ g = gen_func()
 print(next(g))
 print(next(g))
 
+print("---------------------")
+
 #Reading files
 def read_files():
     with open("big.txt") as f:
@@ -80,12 +87,14 @@ print(next(g))
 
 # Generator Expressions
 # Just like list comprehensions, but generators:
+print("---------------------")
 
 g= (x*x for x in range(10))
 print(g)
 print(next(g))
 print(next(g))
 
+print("---------------------")
 
 def infinite_count():
     n=1
@@ -104,6 +113,7 @@ print(next(g))
 
 print("-----------------------------------")
 
+print("---------------------")
 
 
 def generator_func(value):
@@ -122,6 +132,10 @@ print(next(gen))
 # print(next(gen))
 # print(next(gen))
 # print(next(gen))
+print("---------------------")
+
+
+    
 
 
 def generator_func(value):
@@ -142,6 +156,18 @@ print(gen.__next__())
 # print(gen.__next__())
 # print(gen.__next__())
 # print(gen.__next__())
+
+# 1️⃣ What is a coroutine?
+
+# A coroutine is like a generator, but you can send data into it while it’s paused.
+
+# Generators: only yield values out → you call next() to get the next value
+# Coroutines: you can pause, yield, and also receive values using .send()
+
+# Think of it like a conversation:
+
+# Generator: “I give you numbers one by one.”
+# Coroutine: “I give you numbers, but you can also tell me something back before I continue.”
 
 """ Generator = You ask the generator for data
 next(gen) → generator gives output
@@ -213,6 +239,39 @@ def my_coro():
 # just like next() startes from where it paused , and corotine
 # unfezes where it freezed (yield)
 mc = my_coro()
-next(mc)
+next(mc) # corotine starts and stops (freezes) till yield.
 mc.send(100)
 mc.send(200)
+
+
+def gen_func(value):
+    print("generator started")
+    count =0
+    while count < value:
+        print("1st time yield")
+        yield count
+
+        print("after yield")
+        count = count+1
+        print("done")
+        
+res = gen_func(5)
+print(next(res))
+print(next(res))
+print(next(res))
+
+
+def mine_corr():
+    print("start corr")
+    a = yield
+    print("A: ",a)
+    b = yield
+    print("B: ",b)
+    c = yield
+cor = mine_corr()
+next(cor)
+cor.send(11)
+cor.send(22)
+# cor.send(33)
+
+

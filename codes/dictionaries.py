@@ -3,6 +3,10 @@ student = {
     "age": 24,
     "course": "Data Science"
 }
+print(student.get("name"))
+print(student.get("subject"))
+print(student.setdefault("countries",["germany","india"]))
+print(student)
 student['age'] =25
 student['city']= "Heidelberg"
 del student['course']
@@ -10,6 +14,7 @@ print(student.setdefault("salary"))
 print(student.setdefault("hobbies","football"))
 print(student.setdefault("courses",["it","german","Python"]))
 print(student)
+print(student.get("name"))
 
 
 # (frequency counter)

@@ -1,0 +1,12 @@
+How AI Works
+AI systems leverage advanced technologies to process vast amounts of data, identify patterns, and make intelligent decisions. The core components include: 
+Machine Learning (ML): A primary approach where computers learn from data without being explicitly programmed. It uses statistical techniques to improve performance on a specific task over time.
+Neural Networks: Algorithms that mimic the structure of the human brain to process data and recognize complex patterns. They form the core of modern AI technologies.
+Deep Learning: A subset of machine learning using deep neural networks with multiple "hidden layers" to process information more profoundly, effective for complex tasks like image and speech recognition.
+Natural Language Processing (NLP): Enables computers to understand, interpret, and generate human language, used in chatbots and virtual assistants.
+Computer Vision: Allows machines to process and extract insights from images and videos, crucial for applications like facial recognition and self-driving cars. 
+Types of AI
+AI is generally categorized by its capabilities:
+Weak AI (Narrow AI): The most common form today, designed to perform a single, specific job, such as a virtual assistant (like Siri or Alexa) or a spam filter.
+Strong AI (Artificial General Intelligence - AGI): Systems that would possess human-level cognitive abilities and could apply intelligence to any problem, not just a specific one. This type does not yet exist.
+Artificial Superintelligence: A theoretical stage where AI would surpass human intelligence and capabilities across all domains. 

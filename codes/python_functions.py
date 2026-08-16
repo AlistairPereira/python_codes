@@ -427,62 +427,62 @@ print(res)
 # calculator()    
 
 print("-------------------------------------")
-# def calculator():
-#     def add(nums):
-#         result =0
-#         for n in nums:
-#             result = result+n
-#         return result
+def calculator():
+    def add(nums):
+        result =0
+        for n in nums:
+            result = result+n
+        return result
     
-#     def sub(nums): 
-#         result = nums[0]
-#         for n in nums[1:]:
-#             result = result - n
-#         return result
+    def sub(nums): 
+        result = nums[0]
+        for n in nums[1:]:
+            result = result - n
+        return result
     
-#     def mul(nums): 
-#         result = nums[0]
-#         for n in nums[1:]:
-#             result = result * n
-#         return result
+    def mul(nums): 
+        result = nums[0]
+        for n in nums[1:]:
+            result = result * n
+        return result
     
-#     def div(nums):
-#         result = nums[0]
-#         for n in nums[1:]:
-#             if n ==0:
-#                 return ZeroDivisionError
-#             result = result/n
-#         return result
+    def div(nums):
+        result = nums[0]
+        for n in nums[1:]:
+            if n ==0:
+                return ZeroDivisionError
+            result = result/n
+        return result
     
-#     operations = {"add": add, "sub": sub, "mul": mul, "div": div}
+    operations = {"add": add, "sub": sub, "mul": mul, "div": div}
     
-#     while True:
-#         op = input("enter operations add/sub/mul/div: ")
-#         # a = float(input("enter num1: "))
-#         # b = float(input("enter num2: "))
-#         # raw = input("enter numbers separated by space: ")
-#         # nums = [float(x) for x in raw.split()]
+    while True:
+        op = input("enter operations add/sub/mul/div: ")
+        # a = float(input("enter num1: "))
+        # b = float(input("enter num2: "))
+        # raw = input("enter numbers separated by space: ")
+        # nums = [float(x) for x in raw.split()]
         
-#         if op == "exit":
-#             print("bye bye, u have exited ")
-#             break
+        if op == "exit":
+            print("bye bye, u have exited ")
+            break
     
-#         if op not in operations:
-#             print("invalid operation name")
-#             continue
+        if op not in operations:
+            print("invalid operation name")
+            continue
         
-#         raw = input("enter numbers separated by space: ")
-#         nums = [float(x) for x in raw.split()]
+        raw = input("enter numbers separated by space: ")
+        nums = [float(x) for x in raw.split()]
         
-#         if len(nums) < 2:
-#             print("Please enter at least two numbers.")
-#             continue
+        if len(nums) < 2:
+            print("Please enter at least two numbers.")
+            continue
         
     
-#         result = operations[op](nums)
-#         print(f"result: {result}")
+        result = operations[op](nums)
+        print(f"result: {result}")
     
-# calculator()    
+calculator()    
 
 
 # #GUESS THE NUMBER GAME (Simple & Clean)
@@ -515,28 +515,28 @@ print("-------------------------------------")
 # guess_number()
 
 
-# def guessing_number():
+def guessing_number():
     
-#     secret_no = random.randint(1,20)
-#     print("think of a number to enter: ")
-#     print("only 3 attempts: ")
+    secret_no = random.randint(1,20)
+    print("think of a number to enter: ")
+    print("only 3 attempts: ")
     
-#     for i in range(1,4):
-#         user_number = int(input("enter a number: "))
-#         if user_number == secret_no:
-#             print(f"congrats! you have and guess in {i} attmepts")
+    for i in range(1,4):
+        user_number = int(input("enter a number: "))
+        if user_number == secret_no:
+            print(f"congrats! you have and guess in {i} attmepts")
             
-#         if user_number < secret_no:
-#             print("no is low")
-#         if user_number > secret_no:
-#             print("no is high")
+        if user_number < secret_no:
+            print("no is low")
+        if user_number > secret_no:
+            print("no is high")
             
-#         attempts = 3 - i
-#         print(f"attempts left : {attempts}")
+        attempts = 3 - i
+        print(f"attempts left : {attempts}")
             
-#     print(f"the correct no is {secret_no}")
+    print(f"the correct no is {secret_no}")
     
-# guessing_number()
+guessing_number()
 
 
 # Create a Password Strength Checker

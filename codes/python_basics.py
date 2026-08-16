@@ -305,29 +305,29 @@
 # If age ≥ 60 → 30% discount Use nested-if for class and age logic.
 # """
     
-# age = int(input("enter your age: "))
+age = int(input("enter your age: "))
 
-# while True:
-#     train_class = int(input("enter class 1/2/3: "))
-#     if train_class >= 1 and train_class <= 3:
-#         break # will terminate everything inisde while loop and execute that is outside while loop i.e. distance
-#     else:
-#         print("enter a valid class between 1 and 3")
+while True:
+    train_class = int(input("enter class 1/2/3: "))
+    if train_class >= 1 and train_class <= 3:
+        break # will terminate everything inisde while loop and execute that is outside while loop i.e. distance
+    else:
+        print("enter a valid class between 1 and 3")
         
-# distance = int(input("enter distance in km: "))
-# base_price = distance * 2
+distance = int(input("enter distance in km: "))
+base_price = distance * 2
 
 
-# if train_class == 1:
-#     base_price = base_price + (base_price / 2)
+if train_class == 1:
+    base_price = base_price + (base_price / 2)
         
-# if age < 10:
-#     # base_price = base_price - distance
-#     base_price = base_price - (base_price / 2)
-# elif age >= 60:
-#     base_price = base_price * 0.7
+if age < 10:
+    # base_price = base_price - distance
+    base_price = base_price - (base_price / 2)
+elif age >= 60:
+    base_price = base_price * 0.7
         
-# print(f"ticket_price : {base_price}")
+print(f"ticket_price : {base_price}")
 
 
 # #break, pass, continue (Linear Search)
@@ -336,7 +336,7 @@
 # key =50
 
 # for index,value in enumerate(l):
-#     if value == key:
+#     if value == ke`1`:
 #         print("Element found at index",index)
 #         break
 #     else:
@@ -410,6 +410,33 @@ for i in range(1,4):
         break
     else:
         print("incoorect password")
+        if i ==2:
+            print("3rd attepmt is ur last")
+        continue
 else:
     print("acount blocked")
 
+
+squares = [i*i for i in range(1,11)]
+print(squares)
+
+import random
+secret_number = random.randint(1,50)
+
+for i in range(0,3):
+    guess = int(input("Enter a number between 1 and 50: "))
+
+    if guess == secret_number:
+        print("correct guess")
+        break
+    elif guess < secret_number
+        print("number is low")
+    else:
+        print("number is high")
+        
+    if i==1:
+        print('next attempt is ur last')
+        
+else:
+    print("game over ")
+        

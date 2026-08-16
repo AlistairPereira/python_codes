@@ -10,7 +10,7 @@ def unique(*l):
             
     for k,v in d.items():
         if v%2!=0:
-            return k
+            return k,v
     return None
 
 res = unique(1,1,2,3,4,5,5,6,6,4)
@@ -76,3 +76,5 @@ def unique(l):
 res = unique([1,9,8,8,7,6,1,6])
 print(res)
     
+    
+

@@ -1,4 +1,12 @@
 
+# Situation	                                   Use
+# Create a new list	                     ✅ List comprehension
+# Apply same operation to every item	     ✅ List comprehension
+# Filter items	                         ✅ List comprehension
+# Multiple if/else conditions	             ❌ Normal loop
+# Need print/log/API/database operations	 ❌ Normal loop
+# Need debugging step-by-step	              ❌ Normal loop
+
 # Normal loop → slower
 # List comprehension → faster (around 20–30%)
 # fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']

@@ -19,6 +19,25 @@ print(generator.__next__())
 
 print("----------------------")
 
+def gen(value):
+    print("inside generatir")
+    count=0
+    
+    while count < value:
+        print("before yield")
+        yield count
+        print("after yield")
+        count +=1
+        
+generator = gen(3)
+print(generator.__next__())
+print(generator.__next__())
+
+
+
+
+print("----------------------")
+
 def begin_coroutine(func):
     def inner_function():
         result = func()
@@ -56,3 +75,4 @@ print("program completed")
 # line by line in the file
 # seach_word()
 # write_to_db()
+""
